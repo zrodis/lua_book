@@ -20,6 +20,7 @@ function printSolution(board)
         io.write("\n")
     end
     io.write("\n")
+    os.exit() --exercise 2.1
 end
 
 function addQueen(board, n)
