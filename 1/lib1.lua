@@ -1,6 +1,6 @@
 -- defines a factorial function
 function fact(n)
-    if not (type(n) == "number") then
+    if type(n) ~= "number" then
         return error
     elseif n < 0 then
         return error
