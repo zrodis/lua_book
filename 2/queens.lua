@@ -1,6 +1,8 @@
 BOARD_SIZE = 8
 -- board array would look something like {3, 7, 2, 1, 8, 6, 5, 4}.
 -- each item in the array represents a row, and its value represents which column holds the queen within that row.
+-- the index of each item in the array is the row value.
+
 function isPlaceOk(board, n, column)
     for i = 1, n - 1 do
         if (board[i] == column) or
