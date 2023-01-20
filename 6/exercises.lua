@@ -30,8 +30,24 @@ function listPop(...)
     return table.unpack(args)
 end
 
-print("/nlistPop")
+print("\nlistPop")
 print(listPop(4, 5, 6))
 
 -- exercise 6.4
--- shuffle a given list. Make sure all permutations are equally probable
+-- shuffle a given list. Make sure all permutations are equally probable (with the limits of math.random)
+function listRandomOrder(list)
+    local result = {}
+    local index
+    local item
+    for i = 1, #list do
+        index = math.random(#list)
+        item = table.remove(list, index)
+        table.insert(result, item)
+    end
+
+
+    return result
+end
+
+print("\nlistRandomOrder")
+printList(listRandomOrder({ 1, 2, 3, 4, 5 }))
