@@ -30,5 +30,19 @@ end
 -- exercise 5.7
 -- write a function that inserts all elements of a given list into a given
 -- position of another given list
+function listInsert(l, dest, n)
+    local pos = n
+    for _, k in pairs(l) do
+        table.insert(dest, pos, k)
+        pos = pos + 1
+    end
+
+    return dest
+end
+
+function testListInsert()
+    result = listInsert({ "b", "c", "d" }, { "a", "x" }, 2)
+    luaunit.assertEquals(result, { "a", "b", "c", "d", "x" })
+end
 
 luaunit.LuaUnit.run()
